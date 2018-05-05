@@ -9,10 +9,17 @@ SRC=$PWD/src
 cd "$SRC"
 mkdir -p x1 x1_25 x1_5 x2
 cd "$SRC"/svg
-find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x1/${0%.svg}.png" -w 32 -h 32 $0' {} \;
-find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x1_25/${0%.svg}.png" -w 40 -w 40 $0' {} \;
-find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x1_5/${0%.svg}.png" -w 48 -w 48 $0' {} \;
-find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x2/${0%.svg}.png" -w 64 -w 64 $0' {} \;
+# find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x1/${0%.svg}.png" -w 32 -h 32 $0' {} \;
+# find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x1_25/${0%.svg}.png" -w 40 -w 40 $0' {} \;
+# find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x1_5/${0%.svg}.png" -w 48 -w 48 $0' {} \;
+# find . -name "*.svg" -type f -exec sh -c 'inkscape -z -e "../x2/${0%.svg}.png" -w 64 -w 64 $0' {} \;
+for i in $(find . -name "*.svg" -type f)
+do 
+  convert -size 32x32 -background none $i  ../x1/${i/\.svg/.png}
+  convert -size 40x40 -background none $i  ../x1_25/${i/\.svg/.png}
+  convert -size 48x48 -background none $i  ../x1_5/${i/\.svg/.png}
+  convert -size 64x64 -background none $i  ../x2/${i/\.svg/.png}
+done
 
 cd $SRC
 

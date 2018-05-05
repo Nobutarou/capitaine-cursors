@@ -1,3 +1,9 @@
+# The change from the original
+* Incskape to ImageMagick because I don't have it yet.
+* ul_angle and ur_angle link to default because either one is required by FVWM.
+
+I never change the original design.
+
 # Capitaine cursors
 This is an x-cursor theme inspired by macOS and based on KDE Breeze.
 The source files were made in Inkscape, and the theme was designed to
