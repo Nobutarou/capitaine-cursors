@@ -55,5 +55,4 @@ w-resize size_hor
 watch wait
 whats_this help
 xterm text
-ul_angle default
-ur_angle default
+top_left_arrow left_ptr

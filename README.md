@@ -1,6 +1,6 @@
 # The change from the original
 * Incskape to ImageMagick because I don't have it yet.
-* ul_angle and ur_angle link to default because either one is required by FVWM.
+* Link top_left_arrow to left_ptr because it is required X apps and gtk2 apps.
 
 I never change the original design.
 
